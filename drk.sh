@@ -86,11 +86,11 @@ if [[ $needs_help == true ]] || [[ "$#" -eq 0 ]]; then
     
     Examples:
     Snippet:
-    `drk.sh ~/path/to/file.txt`
+    `drk.sh -s ~/path/to/file.txt`
     File:
-    `drk.sh ~/path/to/file.jpg`
+    `drk.sh -s ~/path/to/file.jpg`
     URL:
-    `drk.sh http://duckduckgo.com`
+    `drk.sh -s http://duckduckgo.com`
     '''
     exit
 fi
@@ -141,7 +141,7 @@ if [[ $submission_type = "s" ]]; then
 
         rawurlencode "$cat_output"; cat_output=${REPLY}
 
-        curl_cmd="$curl_cmd -d body=$cat_output http://darkshare.app/s"
+        curl_cmd="$curl_cmd -d body=$cat_output http://drk.sh/s"
 
         response=$($curl_cmd)
 
@@ -170,7 +170,7 @@ if [[ $submission_type = "f" ]]; then
             curl_cmd="$curl_cmd -u $authentication"
         fi
         
-        curl_cmd="$curl_cmd -F path=@$last_arg http://darkshare.app/f/"
+        curl_cmd="$curl_cmd -F path=@$last_arg http://drk.sh/f/"
 
         response=$($curl_cmd)
 
@@ -196,7 +196,7 @@ if [[ $submission_type = "u" ]]; then
         curl_cmd="$curl_cmd -u $authentication"
     fi
     
-    curl_cmd="$curl_cmd -d destination=$last_arg http://darkshare.app/"
+    curl_cmd="$curl_cmd -d destination=$last_arg http://drk.sh/"
 
     response=$($curl_cmd)
 

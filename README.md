@@ -21,13 +21,13 @@ Help:
 ## Examples:  
 Snippet:  
 ```bash
-    drk.sh ~/path/to/file.txt
+    drk.sh -s ~/path/to/file.txt
 ```
 File:  
 ```bash
-    drk.sh ~/path/to/file.jpg
+    drk.sh -f ~/path/to/file.jpg
 ```
 URL:  
 ```bash
-    drk.sh http://duckduckgo.com
+    drk.sh -u http://duckduckgo.com
 ```
