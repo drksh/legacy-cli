@@ -24,16 +24,6 @@ function validate_submission_choice {
     fi
 }
 
-function validate_submission_action {
-    if [[ $submission_action_chosen = true ]]; then
-        echo "Only one of the folowing can be chosen:"
-        echo "-c (create|default)"
-        exit
-    else
-        submission_action_chosen=true
-    fi
-}
-
 # soruce: http://stackoverflow.com/a/10660730
 rawurlencode() {
     local string="${1}"
