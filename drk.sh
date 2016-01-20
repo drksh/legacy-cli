@@ -141,7 +141,7 @@ if [[ $submission_type = "s" ]]; then
 
         rawurlencode "$cat_output"; cat_output=${REPLY}
 
-        curl_cmd="$curl_cmd -d body=$cat_output http://drk.sh/s"
+        curl_cmd="$curl_cmd -d body=$cat_output https://drk.sh/s"
 
         response=$($curl_cmd)
 
@@ -170,7 +170,7 @@ if [[ $submission_type = "f" ]]; then
             curl_cmd="$curl_cmd -u $authentication"
         fi
         
-        curl_cmd="$curl_cmd -F path=@$last_arg http://drk.sh/f/"
+        curl_cmd="$curl_cmd -F path=@$last_arg https://drk.sh/f/"
 
         response=$($curl_cmd)
 
@@ -196,7 +196,7 @@ if [[ $submission_type = "u" ]]; then
         curl_cmd="$curl_cmd -u $authentication"
     fi
     
-    curl_cmd="$curl_cmd -d destination=$last_arg http://drk.sh/"
+    curl_cmd="$curl_cmd -d destination=$last_arg https://drk.sh/"
 
     response=$($curl_cmd)
 
